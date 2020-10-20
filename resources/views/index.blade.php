@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Zapatillas de moda</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> 
         <!--stylesheet-->
@@ -15,7 +15,7 @@
     <body>
         <!-- Navigation -->
         <div class="logo">
-            <i class="fa fa-plane" aria-hidden="true"><span>Smith Shoes</span></i>
+            <img src="{{asset('img/log.jpg')}}" alt=""><span>Smith Shoes</span></i>
         </div>
         <a class="menu-toggle rounded" href="#">
             <i class="fa fa-bars"></i>
@@ -128,7 +128,7 @@
                     <p>Gran variedad y diseños a la moda</p>
                 </div>
                 <div class="portfolio-wrapper clearfix">
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
                         <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
                         <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
@@ -146,7 +146,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
                         <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
                         <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
@@ -164,7 +164,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
                         <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
@@ -173,8 +173,8 @@
                             </div>
                         </div>
                     </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="images/p-two.jpeg">
-                        <div class="content hover-cont-wrap">
+                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
+                            <div class="content hover-cont-wrap">
                             <div class="content-overlay"></div>
                             <img class="content-image" src="{{asset('img/nike red.jpg')}}">
                             <div class="content-details fadeIn-bottom">
@@ -275,7 +275,8 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="form-wrap">
-                            <form action="javascript:void(0)" method="post">
+                            <form action="/sendForm" method="POST">
+                                @csrf
                                 <div class="fname floating-label">
                                     <input type="text" class="floating-input" name="name" />
                                     <label for="title">Nombre Completo</label>
@@ -285,7 +286,7 @@
                                     <label for="email">Correo</label>
                                 </div>
                                 <div class="contact floating-label">
-                                    <input type="tel" class="floating-input" name="contact" />
+                                    <input type="tel" class="floating-input" name="tel" />
                                     <label for="email">Telefono</label>
                                 </div>
                                 <div class="company floating-label">
