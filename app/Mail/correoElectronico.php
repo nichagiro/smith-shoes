@@ -28,10 +28,9 @@ class correoElectronico extends Mailable
      * @return $this
      */
     public function build()
-    {  
-        return $this->view('mails.email')
-        ->to($this->dato)
-        ->subject('Solicitud Usuario');
+    {      
+        return $this->markdown('mails.email')
+        ->subject('Formulario Pagina');
 
     }
 }

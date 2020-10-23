@@ -15,8 +15,9 @@ class sendForm extends Controller
 
         $datos= $request->all(); 
 
-        Mail::to('nicolaschamorro.cisde@gmail.com')
+        Mail::to('nicolaschamorro@cisde.co')
         ->send(new correoElectronico($datos));
+
 
 
     }

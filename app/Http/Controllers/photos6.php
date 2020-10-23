@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\portafolio;
 
-class zapatillasController extends Controller
+class photos6 extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class zapatillasController extends Controller
      */
     public function index()
     {
-        //
+        $photo = portafolio::all();
+
+        return view('admin.portafolio.portafolio',compact('photo'));
     }
 
     /**
@@ -23,6 +26,7 @@ class zapatillasController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -33,7 +37,7 @@ class zapatillasController extends Controller
      */
     public function store(Request $request)
     {
-        return 'funciona';
+        //
     }
 
     /**
@@ -43,8 +47,9 @@ class zapatillasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {  
+        $zapatilla = portafolio::find($id); 
+        return view('admin.portafolio.edit',compact('zapatilla'));
     }
 
     /**
@@ -67,7 +72,33 @@ class zapatillasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'name_zapatilla' => 'required'
+        ]);
+
+        $zapatilla = portafolio::find($id); 
+
+        if($request->hasFile('photo')){
+            
+            $imagen_publica = public_path().'/img/portafolio/'.$zapatilla->photo;
+            \File::delete($imagen_publica);
+
+            $file = $request->file('photo');
+            $nameFile = time()."-".$file->getClientOriginalName();
+            $file->move(public_path().'/img/portafolio/', $nameFile);
+
+            $zapatilla->photo = $nameFile;
+        }
+        
+        
+        $zapatilla->fill($request->all());
+        $zapatilla->save();
+
+        // return view('admin.portafolio.portafolio')->whith('status','Actualizado');
+        return back()->with('status' , 'Actualizado');
+
+
     }
 
     /**

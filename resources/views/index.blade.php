@@ -15,7 +15,7 @@
     <body>
         <!-- Navigation -->
         <div class="logo">
-            <img src="{{asset('img/log.jpg')}}" alt=""><span>Smith Shoes</span></i>
+            <img src="{{asset('img/log.jpg')}}" alt="smith shoes"><span>Smith Shoes</span></i>
         </div>
         <a class="menu-toggle rounded" href="#">
             <i class="fa fa-bars"></i>
@@ -26,22 +26,25 @@
                 <a class="smooth-scroll" href="#Header"></a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#page-top">Home</a>
+                <a class="smooth-scroll" href="#Banner">Inicio</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#About">About</a>
+                <a class="smooth-scroll" href="#About">Servicios</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Services">Services</a>
+                <a class="smooth-scroll" href="#Services">Nuestras Marcas</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="smooth-scroll" href="#Portfolio">Portfolio</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Testimonials">Testimonials</a>
+                <a class="smooth-scroll" href="#Testimonials">Los mas vendidos</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Contact">Contact</a>
+                <a class="smooth-scroll" href="#Contact">Contactenos</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="" href="/shop">Tienda</a>
             </li>
             </ul>
         </nav>
@@ -52,7 +55,7 @@
             <h2>
                 <em>Estilo, Calidad y Comodidad</em>
             </h2>
-            <a class="btn btn-primary btn-xl smooth-scroll" href="#About">Comprar</a>
+            <a class="btn btn-primary btn-xl" href="/shop">Tienda</a>
             </div>
             <div class="overlay"></div>
         </section>
@@ -70,6 +73,7 @@
             </div>
             </div>
         </section>
+        
         <!-- Acerca de nosotros -->
         <section id="Services" class="content-section text-center">
             <div class="container">
@@ -87,7 +91,7 @@
                             </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/nike red.jpg')}}">
+                                <img class="content-image img-fluid" src="{{asset('img/nike red.jpg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -128,60 +132,17 @@
                     <p>Gran variedad y diseños a la moda</p>
                 </div>
                 <div class="portfolio-wrapper clearfix">
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                        <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
+                    @foreach ($portafolio as $zapatilla)       
+                        <a class="each-portfolio" data-fancybox="gallery" href="{{ url ("img/portafolio/{$zapatilla->photo}")}}">
+                            <div class="content hover-cont-wrap">   
+                                <div class="content-overlay"></div>
+                                <img class="content-image" src="{{asset('img/portafolio/'.$zapatilla->photo)}}" style="height:300px;">
+                                <div class="content-details fadeIn-bottom">
+                                    <span class="zoom"><i class="fa fa-search-plus"></i></span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                        <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                        <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                        <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                        <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="each-portfolio" data-fancybox="gallery" href="img/nike red.jpg">
-                            <div class="content hover-cont-wrap">
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="{{asset('img/nike red.jpg')}}">
-                            <div class="content-details fadeIn-bottom">
-                                <span class="zoom"><i class="fa fa-search-plus"></i></span>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -195,51 +156,17 @@
                             <p>Por su diseño, estilo y economia la gente los mas prefiere</p>
                         </div>
                         <div id="customers-testimonials" class="owl-carousel sin-link">
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-circle" src="{{asset('img/nike red.jpg')}}">
-                                    <p>$250.000</p>
+                            @foreach ($slider as $sliders)
+                                <div class="item">
+                                    <div class="shadow-effect">
+                                        <img class="img-circle" src="{{asset('img/'.$sliders->photo)}}">
+                                        <p>$250.000</p>
+                                    </div>
+                                    <a target="_blank" href="{{ url ("https://wa.me/+573138117901?text=me%20interesa%20la%20la%20zapatilla%20{$sliders->name_zapatilla}")}}">
+                                        <div class="testimonial-name ">Comprar</div>
+                                    </a>
                                 </div>
-                                <a href="https://wa.me/+573138117901">
-                                    <div class="testimonial-name ">Comprar</div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-circle" src="{{asset('img/nike red.jpg')}}">
-                                    <p>$250.000</p>
-                                </div>
-                                <a href="https://wa.me/+573138117901">
-                                    <div class="testimonial-name">Comprar</div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-circle" src="{{asset('img/nike red.jpg')}}">
-                                    <p>$250.000</p>
-                                </div>
-                                <a href="https://wa.me/+573138117901">
-                                    <div class="testimonial-name">Comprar</div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-circle" src="{{asset('img/nike red.jpg')}}">
-                                    <p>$250.000</p>
-                                </div>
-                                <a href="https://wa.me/+573138117901">
-                                    <div class="testimonial-name">Comprar</div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <img class="img-circle" src="{{asset('img/nike red.jpg')}}">
-                                    <p>$250.000</p>
-                                </div>
-                                <a href="https://wa.me/+573138117901">
-                                    <div class="testimonial-name">Comprar</div>
-                                </a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -321,10 +248,6 @@
                 <p class="text-muted small mb-0">Copyright © CISDE 2020</p>
             </a>
         </footer>
-
-
-
-
 
     <!-- scripts -->
     <script type="text/javascript" src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
