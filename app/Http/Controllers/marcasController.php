@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\portafolio;
+use App\Models\marca;
 
-class photos6 extends Controller
+class marcasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class photos6 extends Controller
      */
     public function index()
     {
-        $photo = portafolio::all();
-
-        return view('admin.portafolio.portafolio',compact('photo'));
+        $marcas = marca::all();
+        
+        return view('admin.marcas.marcas',compact('marcas'));
     }
 
     /**
@@ -36,8 +36,18 @@ class photos6 extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        $request->validate([
+            'name_marca' => 'required'
+        ]);
+
+        $marca = new marca();
+        $marca->name_marca = $request->name_marca;
+
+        $marca->save();
+
+        return back()->with('status','Marca Creada');
+
     }
 
     /**
@@ -47,9 +57,9 @@ class photos6 extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {  
-        $zapatilla = portafolio::find($id); 
-        return view('admin.portafolio.edit',compact('zapatilla'));
+    {
+        $marca = marca::find($id);
+        return view('admin.marcas.show', compact('marca'));
     }
 
     /**
@@ -72,30 +82,12 @@ class photos6 extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $request->validate([
-            'name_zapatilla' => 'required'
-        ]);
-
-        $zapatilla = portafolio::find($id); 
-
-        if($request->hasFile('photo')){
-            
-            $imagen_publica = public_path().'/img/portafolio/'.$zapatilla->photo;
-            \File::delete($imagen_publica);
-
-            $file = $request->file('photo');
-            $nameFile = time()."-".$file->getClientOriginalName();
-            $file->move(public_path().'/img/portafolio/', $nameFile);
-
-            $zapatilla->photo = $nameFile;
-        }
+        $marca = marca::find($id);
         
-        
-        $zapatilla->fill($request->all());
-        $zapatilla->save();
+        $marca->name_marca = $request->name_marca;
+        $marca->save();
 
-        return back()->with('status' , 'Actualizado');
+        return back()->with('status','Marca Actualizada');
 
 
     }
@@ -107,7 +99,12 @@ class photos6 extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $marcas = marca::find($id);
+
+        $marcas->delete();
+        return redirect('/marcas')->with('status','Marca Eliminada');
+
     }
+
 }

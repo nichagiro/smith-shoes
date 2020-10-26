@@ -6,9 +6,9 @@
     <div class="row">
         <div class="col-md-4 col-sm-12 mt-3 mx-auto">
             <div class="card border-left-success">
-                <img src=" {{asset('img/portafolio/'.$zapatilla->photo)}} " class="card-img-top" alt="Smith Shoes" style="max-height: 400px;">
+                <img src=" {{asset('img/slider/'.$zapatilla->photo)}} " class="card-img-top" alt="Smith Shoes" style="max-height: 400px;">
                 <div class="card-body">
-                    <form action="/photos6/{{$zapatilla->id}}" method="post"  enctype="multipart/form-data">
+                    <form action="/slider/{{$zapatilla->id}}" method="post"  enctype="multipart/form-data">
                         @csrf  @method('PUT')
                         <div class="card-text text-center"> 
                             <div class="row">

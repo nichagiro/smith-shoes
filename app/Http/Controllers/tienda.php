@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\portafolio;
+use App\Models\zapatilla;
+use App\Models\marca;
 
-class photos6 extends Controller
+class tienda extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,10 @@ class photos6 extends Controller
      */
     public function index()
     {
-        $photo = portafolio::all();
 
-        return view('admin.portafolio.portafolio',compact('photo'));
+        $zapatilla = zapatilla::orderBy('id','desc')->paginate(21);
+        
+        return view ('admin.mart.mart',compact('zapatilla'));
     }
 
     /**
@@ -26,7 +28,9 @@ class photos6 extends Controller
      */
     public function create()
     {
-        //
+        $marcas = marca::all();
+
+        return view ('admin.mart.create');
     }
 
     /**
@@ -42,14 +46,19 @@ class photos6 extends Controller
 
     /**
      * Display the specified resource.
-     *
+     *  
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {  
-        $zapatilla = portafolio::find($id); 
-        return view('admin.portafolio.edit',compact('zapatilla'));
+    {
+        $zapatillas = zapatilla::join('marcas', 'marcas.id','=','zapatillas.id_marca')
+        ->where('zapatillas.id','=', $id)
+        ->get();
+    
+        $marca = marca::all();
+
+        return view('admin.mart.show',compact('zapatillas','marca'));
     }
 
     /**
@@ -72,32 +81,7 @@ class photos6 extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $request->validate([
-            'name_zapatilla' => 'required'
-        ]);
-
-        $zapatilla = portafolio::find($id); 
-
-        if($request->hasFile('photo')){
-            
-            $imagen_publica = public_path().'/img/portafolio/'.$zapatilla->photo;
-            \File::delete($imagen_publica);
-
-            $file = $request->file('photo');
-            $nameFile = time()."-".$file->getClientOriginalName();
-            $file->move(public_path().'/img/portafolio/', $nameFile);
-
-            $zapatilla->photo = $nameFile;
-        }
-        
-        
-        $zapatilla->fill($request->all());
-        $zapatilla->save();
-
-        return back()->with('status' , 'Actualizado');
-
-
+        //
     }
 
     /**

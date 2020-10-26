@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\portafolio;
+use App\Models\slider;
 
-class photos6 extends Controller
+class sliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class photos6 extends Controller
      */
     public function index()
     {
-        $photo = portafolio::all();
+        $zapatillas = slider::all();
 
-        return view('admin.portafolio.portafolio',compact('photo'));
+        return view ('admin.slider.slider',compact('zapatillas'));
     }
 
     /**
@@ -47,9 +47,9 @@ class photos6 extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {  
-        $zapatilla = portafolio::find($id); 
-        return view('admin.portafolio.edit',compact('zapatilla'));
+    {
+        $zapatilla = slider::find($id); 
+        return view('admin.slider.edit-slider',compact('zapatilla'));
     }
 
     /**
@@ -72,21 +72,20 @@ class photos6 extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $request->validate([
             'name_zapatilla' => 'required'
         ]);
 
-        $zapatilla = portafolio::find($id); 
+        $zapatilla = slider::find($id); 
 
         if($request->hasFile('photo')){
             
-            $imagen_publica = public_path().'/img/portafolio/'.$zapatilla->photo;
+            $imagen_publica = public_path().'/img/slider/'.$zapatilla->photo;
             \File::delete($imagen_publica);
 
             $file = $request->file('photo');
             $nameFile = time()."-".$file->getClientOriginalName();
-            $file->move(public_path().'/img/portafolio/', $nameFile);
+            $file->move(public_path().'/img/slider/', $nameFile);
 
             $zapatilla->photo = $nameFile;
         }
@@ -96,8 +95,6 @@ class photos6 extends Controller
         $zapatilla->save();
 
         return back()->with('status' , 'Actualizado');
-
-
     }
 
     /**

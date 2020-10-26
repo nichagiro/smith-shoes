@@ -159,7 +159,7 @@
                             @foreach ($slider as $sliders)
                                 <div class="item">
                                     <div class="shadow-effect">
-                                        <img class="img-circle" src="{{asset('img/'.$sliders->photo)}}">
+                                        <img class="img-circle" src="{{asset('img/slider/'.$sliders->photo)}}">
                                         <p>$250.000</p>
                                     </div>
                                     <a target="_blank" href="{{ url ("https://wa.me/+573138117901?text=me%20interesa%20la%20la%20zapatilla%20{$sliders->name_zapatilla}")}}">

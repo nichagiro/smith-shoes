@@ -64,11 +64,33 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="/slider">
           <i class="fas fa-images"></i>
           <span>los mas vendidos</span>
         </a>
       </li>
+
+      <li class="nav-item ">
+        <a class="nav-link" href="/tienda">
+          <i class="fas fa-shopping-cart mr-2"></i>
+          <span>Tienda</span> 
+        </a>
+      </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading MARCAS-->
+        <div class="sidebar-heading">
+          Marcas
+        </div>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/marcas">
+            <i class="fab fa-earlybirds"></i>
+            <span>Gestionar</span>
+          </a>
+        </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -76,21 +98,30 @@
       <!-- Heading -->
       <div class="sidebar-heading">
         Otros
-      </div>
+      </div>  
 
       <!-- Nav Item - Pages  -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+      <li class="nav-item dropdown">
+        <a class="nav-link" id="dropdownPages" role="button" data-toggle="dropdown"  aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>Paginas</span> 
         </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownPages">
+          <a class="dropdown-item" target="_blank" href="/">
+            <i class="fas fa-location-arrow mr-2"></i>Principal
+          </a>
+          <a class="dropdown-item" target="_blank" href="/shop">
+            <i class="fas fa-shopping-cart mr-2"></i> Tienda
+          </a>
+        </div>
       </li>
 
       <!-- Nav Item - email -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="https://cisde.co/webmail" target="_blank">
           <i class="fas fa-envelope"></i>
-          <span>Correo</span></a>
+          <span>Correo</span>
+        </a>
       </li>
 
 
@@ -109,6 +140,7 @@
 
       {{-- CONTENIDO APLICACION --}}
       <div class="container w-100">
+        
         @yield('content')
       </div>
         
@@ -116,7 +148,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; CISDE 2020</span>
+            <a href="https://cisde.co/" target="_blank">Copyright &copy; CISDE 2020</a>
           </div>
         </div>
       </footer>
@@ -124,9 +156,11 @@
 
     </div>
   <!-- End of Page Wrapper -->
+  
 
-
-
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 
 </html>
