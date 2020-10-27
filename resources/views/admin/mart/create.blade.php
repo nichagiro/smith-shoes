@@ -8,29 +8,29 @@
             <div class="card border-bottom-info">
                 <img src="{{asset('img/zapatillas/new zapatilla.jpg')}} " class="card-img-top" alt="Smith Shoes" style="max-height: 400px;">
                 <div class="card-body">
-                    <form action="/{{$zapatilla->id}}" method="post"  enctype="multipart/form-data">
-                        @csrf  @method('PUT')
+                    <form action="/tienda"  method="post"  enctype="multipart/form-data">
+                        @csrf  
                         <div class="card-text text-center"> 
                             <div class="row">
                                 <div class="col-6">
                                     <small>Nombre</small>
-                                    <input name="name_zapatilla" type="text" value="{{$zapatilla->name_zapatilla}}" class="form-control">
+                                    <input name="nombre" type="text"  class="form-control" >
                                 </div>
                                 <div class="col-6">
                                     <small>Marca</small>
                                     <div class="custom-file">
-                                        <select class="custom-select">
-                                            <option value="{{$zapatilla->id_marca}}" selected> {{$zapatilla->name_marca}} </option>
-                                            @foreach ($marca as $marcas)
-                                                <option value="{{$marcas->id}}"> {{$marcas->name_marca}} </option>
+                                        <select name="marca" class="custom-select" >
+                                            <option value="" selected> Seleccione </option>
+                                            @foreach ($marcas as $marca)
+                                                <option value="{{$marca->id}}"> {{$marca->name_marca}} </option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-2">
-                                    <small>Imagen</small>
+                                    <small>foto</small>
                                     <div class="custom-file">
-                                        <input name="photo" type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                        <input name="foto" type="file" class="custom-file-input" id="customFileLang" lang="es" >
                                         <label class="custom-file-label" for="customFileLang"> screach..</label>
                                     </div>
                                 </div>
@@ -44,5 +44,5 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
 

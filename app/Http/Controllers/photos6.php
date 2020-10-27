@@ -74,17 +74,18 @@ class photos6 extends Controller
     {
 
         $request->validate([
-            'name_zapatilla' => 'required'
+            'nombre' => 'required',
+            'imagen' => 'image'
         ]);
 
         $zapatilla = portafolio::find($id); 
 
-        if($request->hasFile('photo')){
+        if($request->hasFile('imagen')){
             
             $imagen_publica = public_path().'/img/portafolio/'.$zapatilla->photo;
             \File::delete($imagen_publica);
 
-            $file = $request->file('photo');
+            $file = $request->file('imagen');
             $nameFile = time()."-".$file->getClientOriginalName();
             $file->move(public_path().'/img/portafolio/', $nameFile);
 
@@ -92,7 +93,7 @@ class photos6 extends Controller
         }
         
         
-        $zapatilla->fill($request->all());
+        $zapatilla->name_zapatilla = $request->nombre;
         $zapatilla->save();
 
         return back()->with('status' , 'Actualizado');

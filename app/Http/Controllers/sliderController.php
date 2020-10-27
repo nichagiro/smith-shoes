@@ -73,17 +73,18 @@ class sliderController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name_zapatilla' => 'required'
+            'nombre' => 'required',
+            'imagen' => 'image'
         ]);
 
         $zapatilla = slider::find($id); 
 
-        if($request->hasFile('photo')){
+        if($request->hasFile('imagen')){
             
             $imagen_publica = public_path().'/img/slider/'.$zapatilla->photo;
             \File::delete($imagen_publica);
 
-            $file = $request->file('photo');
+            $file = $request->file('imagen');
             $nameFile = time()."-".$file->getClientOriginalName();
             $file->move(public_path().'/img/slider/', $nameFile);
 
@@ -91,7 +92,7 @@ class sliderController extends Controller
         }
         
         
-        $zapatilla->fill($request->all());
+        $zapatilla->name_zapatilla = $request->nombre;
         $zapatilla->save();
 
         return back()->with('status' , 'Actualizado');

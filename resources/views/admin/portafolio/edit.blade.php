@@ -13,11 +13,13 @@
                         <div class="card-text text-center"> 
                             <div class="row">
                                 <div class="col-6">
-                                    <input name="name_zapatilla" type="text" value="{{$zapatilla->name_zapatilla}}" class="form-control">
+                                    <small>Nombre</small>
+                                    <input name="nombre" type="text" value="{{$zapatilla->name_zapatilla}}" class="form-control">
                                 </div>
                                 <div class="col-6">
+                                    <small>Imagen</small>
                                     <div class="custom-file">
-                                        <input name="photo" type="file" class="custom-file-input" id="customFileLang" lang="es">
+                                        <input name="imagen" type="file" class="custom-file-input" id="customFileLang" lang="es">
                                         <label class="custom-file-label" for="customFileLang"> imagen</label>
                                     </div>
                                 </div>

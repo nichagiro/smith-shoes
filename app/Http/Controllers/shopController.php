@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\zapatilla;
+use App\Models\marca;
 
 class shopController extends Controller
 {
@@ -14,8 +15,10 @@ class shopController extends Controller
      */
     public function index()
     {
-        $zapatillas= zapatilla::all();
-        return view('mart.shop', compact('zapatillas'));
+        $zapatillas = zapatilla::inRandomOrder()->paginate(21);
+        $marcas = marca::all();
+
+        return view('mart.shop', compact('zapatillas','marcas'));
     }
 
     /**
@@ -34,9 +37,37 @@ class shopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // NOTA: use este "STORE" controlador solo para mostrar filtros en la vista del cliente de 
+    // los zapatos, esta funcion no graba o guarda datos como de costumbre, la uso ya 
+    // que tenia creado este controlador reosurce el cual solo esta haciendo uso del 
+    // la funcion INDEX
+
     public function store(Request $request)
     {
-        //
+        $filtro = false;
+
+        // Sin filtro
+        if($request->filtro == 0){
+
+            $zapatillas = zapatilla::inRandomOrder()->paginate(21);
+            $marcas = marca::all();
+
+            return view('mart.shop', compact('zapatillas','marcas'));
+
+        }
+
+        else {
+            // con filtro
+            $zapatillas = zapatilla::inRandomOrder()
+            ->where('id_marca','=',$request->filtro)
+            ->paginate(21);
+
+            $marcas = marca::all();
+
+            return view('mart.shop', compact('zapatillas','marcas'));
+
+        }
     }
 
     /**

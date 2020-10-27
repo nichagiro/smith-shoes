@@ -23,7 +23,7 @@
                         <td>
                             <form action="/marcas/{{$marca->id}}" method="POST">
                                 @method('PUT') @csrf
-                                <input type="text" name="name_marca" value="{{$marca->name_marca}}" class="form-control w-100" required>
+                                <input type="text" name="nombre" value="{{$marca->name_marca}}" class="form-control w-100">
                         </td>
                         <td class="d-flex justify-content-left">
                             <button type="submit" class="btn btn-success"> Actualizar</button>
@@ -49,7 +49,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" name="name_marca" class="form-control" placeholder="Escriba el nombre" required>
+                        <input type="text" name="marca" class="form-control" placeholder="Escriba el nombre">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -51,15 +51,21 @@
         <!-- Header Starts -->
         <section id="Banner" class="content-section">
             <div class="container content-wrap text-center">
-            <h1>Zapatillas de moda</h1>
-            <h2>
-                <em>Estilo, Calidad y Comodidad</em>
-            </h2>
-            <a class="btn btn-primary btn-xl" href="/shop">Tienda</a>
+                <h1>Zapatillas de moda</h1>
+                <h2>
+                    <em>Estilo, Calidad y Comodidad</em>
+                </h2>
+                <a class="btn btn-primary btn-xl" href="/shop">Tienda</a>
             </div>
             <div class="overlay"></div>
         </section>
         <!-- Header Ends -->
+        <div class="w-100 mt-3">
+            <div class="mx-auto w-75" style="margin: auto;">
+                @include('plantillas.errors.error')
+                @include('plantillas.success.succes')
+            </div>
+        </div>
         <!-- Acerca de nosotros -->
         <section id="About" class="content-section">
             <div class="container text-center">
@@ -73,7 +79,6 @@
             </div>
             </div>
         </section>
-        
         <!-- Acerca de nosotros -->
         <section id="Services" class="content-section text-center">
             <div class="container">
@@ -205,7 +210,7 @@
                             <form action="/sendForm" method="POST">
                                 @csrf
                                 <div class="fname floating-label">
-                                    <input type="text" class="floating-input" name="name" />
+                                    <input type="text" class="floating-input" name="nombre" />
                                     <label for="title">Nombre Completo</label>
                                 </div>
                                 <div class="email floating-label">
@@ -213,11 +218,11 @@
                                     <label for="email">Correo</label>
                                 </div>
                                 <div class="contact floating-label">
-                                    <input type="tel" class="floating-input" name="tel" />
+                                    <input type="tel" class="floating-input" name="telefono" />
                                     <label for="email">Telefono</label>
                                 </div>
                                 <div class="company floating-label">
-                                    <textarea type="text" class="floating-input" name="msg"></textarea>
+                                    <textarea type="text" class="floating-input" name="mensaje"></textarea>
                                     <label for="email">Mensaje</label>
                                 </div>
                                 <div class="submit-btn">

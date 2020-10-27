@@ -10,12 +10,33 @@
     <!-- Header Ends -->
     <!-- Acerca de nosotros -->
     <div id="About" class="container my-3">
-        <div class="row">
+        <div class="w-50">
+            <form action="/shop" method="post">
+                @csrf
+                <small>Filtrar zapatillas</small>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="custom-file">
+                            <select name="filtro" class="custom-select">
+                                <option value="0" selected>  Todas  </option>
+                                @foreach ($marcas as $marca)
+                                    <option  value="{{$marca->id}}"> {{$marca->name_marca}} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-2">
             @foreach ($zapatillas as $zapatilla)
                 <div class="col-sm-12 col-md-3 mt-3">
                     <div class="card">
                         <div class="card-body">
-                            <img src="{{asset('img/'.$zapatilla->photo)}}" class="card-img-top" alt="...">
+                            <img src="{{asset('img/zapatillas/'.$zapatilla->photo)}}" class="card-img-top" alt="smith shoes" height="250px;">
                             <h5 class="card-title text-center mt-"> {{$zapatilla->name_zapatilla}} </h5>
                         </div>
                         <div class="card-footer text-center">
@@ -24,6 +45,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="mt-5 mx-auto">
+                {{$zapatillas->links('pagination::bootstrap-4')}}
+            </div>
         <div>
     </div>
 @endsection

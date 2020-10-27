@@ -38,11 +38,11 @@ class marcasController extends Controller
     public function store(Request $request)
     { 
         $request->validate([
-            'name_marca' => 'required'
+            'marca' => 'required'
         ]);
 
         $marca = new marca();
-        $marca->name_marca = $request->name_marca;
+        $marca->name_marca = $request->marca;
 
         $marca->save();
 
@@ -82,9 +82,13 @@ class marcasController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nombre' => 'required'
+        ]);
+
         $marca = marca::find($id);
         
-        $marca->name_marca = $request->name_marca;
+        $marca->name_marca = $request->nombre;
         $marca->save();
 
         return back()->with('status','Marca Actualizada');
@@ -103,6 +107,7 @@ class marcasController extends Controller
         $marcas = marca::find($id);
 
         $marcas->delete();
+
         return redirect('/marcas')->with('status','Marca Eliminada');
 
     }
