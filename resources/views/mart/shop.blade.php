@@ -1,8 +1,8 @@
 @extends('plantillas.menu')
 @section('contenido')
     <!-- Header Starts -->
-    <section id="Banner" class="content-section" style="height: 60vh;">
-        <div class="container content-wrap text-center">
+    <section id="" class="fondo-shop" style="height: 60vh;">
+        <div class="d-flex align-items-center justify-content-center content-wrap text-center items-shop">
             <h1>Las mejores marcas</h1>
         </div>
         <div class="overlay"></div>

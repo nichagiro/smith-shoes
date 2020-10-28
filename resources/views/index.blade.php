@@ -47,15 +47,15 @@
         </nav>
         <!-- Header Starts -->
         <section id="home" class="fondo-inicial">
-            <div class="container content-wrap text-center">
+            <div class="content-wrap text-center items-inicial">
                 <div class="w-100">
-                    <img src="{{asset('img/smith shoes-cisde.png')}}" alt="smith shoes" height="200px;">
+                    <img src="{{asset('img/smith shoes-cisde.png')}}" alt="smith shoes" height="300px;">
                 </div>
                 <h1>Zapatillas de moda</h1>
                 <h2>
                     <em>Estilo, Calidad y Comodidad</em>
                 </h2>
-                <a class="btn btn-primary btn-xl" href="/shop">Tienda</a>
+                <a class="btn btn-info btn-xl" href="/shop">Tienda</a>
             </div>
             <div class="overlay"></div>
         </section>
@@ -90,9 +90,9 @@
                     <div class="col-md-4 col-sm-12">
                         <div class="service-box">
                             <div class="service-icon yellow">
-                            <div class="front-content text-white">
-                                <i class="fa fa-star fa-3x"></i>
-                                <h3 class="mt-4">PUMA</h3>
+                            <div class="front-content">
+                            <img src="{{asset('img/icon-puma.png')}}">
+                                <h3 class="mt-4" style="font-size: 2rem;">PUMA</h3>
                             </div>
                             </div>
                             <div class="service-content">
@@ -104,8 +104,8 @@
                         <div class="service-box">
                             <div class="service-icon orange">
                                 <div class="front-content text-white">
-                                    <i class="fa fa-star fa-3x"></i>
-                                    <h3 class="mt-4">ADIDAS</h3>
+                                    <img src="{{asset('img/icon-adidas.png')}}">
+                                    <h3 class="mt-4" style="font-size: 2rem;">ADIDAS</h3>
                                 </div>
                             </div>
                             <div class="service-content">
@@ -117,8 +117,8 @@
                         <div class="service-box ">
                             <div class="service-icon red">
                                 <div class="front-content text-white">
-                                    <i class="fa fa-star fa-3x"></i>
-                                    <h3 class="mt-4">NIKE</h3>
+                                    <img src="{{asset('img/icon-nike.png')}}">
+                                    <h3 class="mt-4" style="font-size: 2rem;">NIKE</h3>
                                 </div>
                             </div>
                             <div class="service-content">
