@@ -37,7 +37,7 @@
                     <div class="card">
                         <div class="card-body">
                             <img src="{{asset('img/zapatillas/'.$zapatilla->photo)}}" class="card-img-top" alt="smith shoes" height="250px;">
-                            <h5 class="card-title text-center mt-"> {{$zapatilla->name_zapatilla}} </h5>
+                            {{-- <h5 class="card-title text-center mt-"> {{$zapatilla->name_zapatilla}} </h5> --}}
                         </div>
                         <div class="card-footer text-center">
                             <a href="{{ url ("https://wa.me/573138117901?text=me%20interesa%20los%20{$zapatilla->name_zapatilla}")}}" target="_blank"  class="btn btn-info">Cotizar</a>
@@ -45,10 +45,10 @@
                     </div>
                 </div>
             @endforeach
-            <div class="mt-5 mx-auto">
-                {{$zapatillas->links('pagination::bootstrap-4')}}
-            </div>
-        <div>
+        </div>
+        <div class="mt-4 w-100 d-flex justify-content-center">
+            {{$zapatillas->links('pagination::bootstrap-4')}}
+        </div>
     </div>
 @endsection
 

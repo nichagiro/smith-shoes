@@ -34,8 +34,8 @@ h1,h2,h3,h4,h5,h6 {
 .logo {
 	position: absolute;
 	z-index: 99;
-	left: 50px;
-	top: 20px;
+	left: 1px;
+	top: 1px;
 }
 .logo i {
 	font-size: 50px;
@@ -545,4 +545,15 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
 
 .sin-link a{
   text-decoration:none;
+}
+
+.fondo-inicial{
+  width:100%;
+  height:100vh;
+  color: white;
+  background-position: center;		
+  background-size: cover;
+  
+  background:url('/img/fondo zapato.jpg')
+
 }

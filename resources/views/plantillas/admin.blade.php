@@ -133,16 +133,16 @@
       <!-- NAVBAR -->
       <div id="content">
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>  
           <ul class="navbar-nav ml-auto">
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-              <i class="fa fa-bars"></i>
-            </button>  
             <!-- Authentication Links -->
               {{-- @if (Route::has('register'))
                   <li class="nav-item">
-                      <a class="nav-link" href="registrar-usuario">{{ __('Registrar') }}</a>
+                      <a class="nav-link" href="/usuario-create">{{ __('Register') }}</a>
                   </li>
-              @endif --}}
+              @endif  --}}
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <i class="fas fa-caret-down ml-1"></i>

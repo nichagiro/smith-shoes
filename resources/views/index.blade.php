@@ -14,9 +14,6 @@
     </head>
     <body>
         <!-- Navigation -->
-        <div class="logo">
-            {{-- <img src="{{asset('img/logo.jpg')}}" alt="smith shoes"><span>Smith Shoes</span></i> --}}
-        </div>
         <a class="menu-toggle rounded" href="#">
             <i class="fa fa-bars"></i>
         </a>
@@ -26,7 +23,7 @@
                 <a class="smooth-scroll" href="#Header"></a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Banner">Inicio</a>
+                <a class="smooth-scroll" href="#home">Inicio</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="smooth-scroll" href="#About">Servicios</a>
@@ -49,8 +46,11 @@
             </ul>
         </nav>
         <!-- Header Starts -->
-        <section id="Banner" class="content-section">
+        <section id="home" class="fondo-inicial">
             <div class="container content-wrap text-center">
+                <div class="w-100">
+                    <img src="{{asset('img/smith shoes-cisde.png')}}" alt="smith shoes" height="200px;">
+                </div>
                 <h1>Zapatillas de moda</h1>
                 <h2>
                     <em>Estilo, Calidad y Comodidad</em>
@@ -165,7 +165,7 @@
                                 <div class="item">
                                     <div class="shadow-effect">
                                         <img class="img-circle" src="{{asset('img/slider/'.$sliders->photo)}}">
-                                        <p>$250.000</p>
+                                        {{-- <p>$250.000</p> --}}
                                     </div>
                                     <a target="_blank" href="{{ url ("https://wa.me/+573138117901?text=me%20interesa%20la%20la%20zapatilla%20{$sliders->name_zapatilla}")}}">
                                         <div class="testimonial-name ">Comprar</div>
