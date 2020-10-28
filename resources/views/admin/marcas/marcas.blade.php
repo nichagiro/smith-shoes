@@ -7,35 +7,37 @@
         <div class="w100 mb-2">
             <button class="btn btn-info" data-toggle="modal" data-target="#crearModal">Crear Marca</button>
         </div>
-        <table class="table">
-            <caption>Lista de marcas</caption>
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Accion</th>
-                </tr>  
-            </thead>
-            <tbody>
-                @foreach ($marcas as $marca)
+        <div class="table-responsive">
+            <table class="table">
+                <caption>Lista de marcas</caption>
+                <thead>
                     <tr>
-                        <th scope="row">{{$marca->id}}</th>
-                        <td>
-                            <form action="/marcas/{{$marca->id}}" method="POST">
-                                @method('PUT') @csrf
-                                <input type="text" name="nombre" value="{{$marca->name_marca}}" class="form-control w-100">
-                        </td>
-                        <td class="d-flex justify-content-left">
-                            <button type="submit" class="btn btn-success"> Actualizar</button>
-                            </form>
-                            <form action="/marcas/{{$marca->id}}" method="get" class="ml-2">
-                                <button type="submit" class="btn btn-danger"> Eliminar</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Accion</th>
+                    </tr>  
+                </thead>
+                <tbody>
+                    @foreach ($marcas as $marca)
+                        <tr>
+                            <th scope="row">{{$marca->id}}</th>
+                            <td>
+                                <form action="/marcas/{{$marca->id}}" method="POST">
+                                    @method('PUT') @csrf
+                                    <input type="text" name="nombre" value="{{$marca->name_marca}}" class="form-control w-100">
+                            </td>
+                            <td class="d-flex justify-content-left">
+                                <button type="submit" class="btn btn-success"> Actualizar</button>
+                                </form>
+                                <form action="/marcas/{{$marca->id}}" method="get" class="ml-2">
+                                    <button type="submit" class="btn btn-danger"> Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="crearModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <form action="/marcas" method="POST">

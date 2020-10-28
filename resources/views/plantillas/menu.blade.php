@@ -15,7 +15,7 @@
 <body>
     <!-- Navigation -->
     <div class="logo">
-        <img src="{{asset('img/log.jpg')}}" alt=""><span>Smith Shoes</span></i>
+        {{-- <img src="{{asset('img/log.jpg')}}" alt="smith shoes"><span>Smith Shoes</span></i> --}}
     </div>
     <a class="menu-toggle rounded" href="#">
         <i class="fa fa-bars"></i>
@@ -27,15 +27,6 @@
         </li>
         <li class="sidebar-nav-item">
             <a href="/index">Inicio</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="smooth-scroll" href="#puma">Puma</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="smooth-scroll" href="#nike">Nike</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="smooth-scroll" href="#adidas">Adidas</a>
         </li>
     </nav>  
     

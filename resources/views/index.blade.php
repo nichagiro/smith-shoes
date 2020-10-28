@@ -15,7 +15,7 @@
     <body>
         <!-- Navigation -->
         <div class="logo">
-            <img src="{{asset('img/log.jpg')}}" alt="smith shoes"><span>Smith Shoes</span></i>
+            {{-- <img src="{{asset('img/logo.jpg')}}" alt="smith shoes"><span>Smith Shoes</span></i> --}}
         </div>
         <a class="menu-toggle rounded" href="#">
             <i class="fa fa-bars"></i>
@@ -96,7 +96,7 @@
                             </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/nike red.jpg')}}" alt="smith shoes">
+                                <img class="content-image img-fluid" src="{{asset('img/puma.jpg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/nike red.jpg')}}">
+                                <img class="content-image img-fluid" src="{{asset('img/adidas.jpg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/nike red.jpg')}}">
+                                <img class="content-image img-fluid" src="{{asset('img/nike.jpg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -254,6 +254,7 @@
             </a>
         </footer>
 
+        
     <!-- scripts -->
     <script type="text/javascript" src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/all-plugins.js')}}"></script>

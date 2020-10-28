@@ -11,8 +11,6 @@ use App\Http\Controllers\marcasController;
 use App\Http\Controllers\tienda;
 
 
-
-
 // INDEX
 Route::get('/', [indexController::class, 'index'] ); 
 Route::get('index',[indexController::class, 'index']);
@@ -24,13 +22,12 @@ Route::post('sendForm',[sendForm::class, 'enviar']);
 Route::resource('shop', shopController::class);
 
 // ADMIN
-Route::get('superusuario',[adminController::class, 'index']);
-Route::resource('photos6', photos6::class);
-Route::resource('slider', sliderController::class);
-Route::resource('marcas', marcasController::class);
-Route::resource('tienda', tienda::class);
+Route::get('superusuario',[adminController::class, 'index'])->middleware('auth');
+Route::resource('photos6', photos6::class)->middleware('auth');
+Route::resource('slider', sliderController::class)->middleware('auth');
+Route::resource('marcas', marcasController::class)->middleware('auth');
+Route::resource('tienda', tienda::class)->middleware('auth');
 
 
-
-
-
+Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

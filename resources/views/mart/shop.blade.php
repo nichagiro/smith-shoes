@@ -10,12 +10,12 @@
     <!-- Header Ends -->
     <!-- Acerca de nosotros -->
     <div id="About" class="container my-3">
-        <div class="w-50">
+        <div class="w-100">
             <form action="/shop" method="post">
                 @csrf
                 <small>Filtrar zapatillas</small>
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-md-4 mb-2">
                         <div class="custom-file">
                             <select name="filtro" class="custom-select">
                                 <option value="0" selected>  Todas  </option>
@@ -25,13 +25,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4 col-sm-4">
                         <button class="btn btn-primary">Filtrar</button>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="row mt-2">
+        <div class="row mt-1">
             @foreach ($zapatillas as $zapatilla)
                 <div class="col-sm-12 col-md-3 mt-3">
                     <div class="card">
