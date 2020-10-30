@@ -21,6 +21,9 @@ Route::post('sendForm',[sendForm::class, 'enviar']);
 // TIENDA INDEX
 Route::resource('shop', shopController::class);
 
+// POLITICA PRIVACIDAD
+Route::view('politica-privacidad', 'privacidad');
+
 // ADMIN
 Route::get('superusuario',[adminController::class, 'index'])->middleware('auth');
 Route::resource('photos6', photos6::class)->middleware('auth');

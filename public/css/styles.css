@@ -560,15 +560,10 @@ footer.footer p.small a:hover, footer.footer p.small a.focus {
   height:100%;
 }
 
-.fondo-shop{
-  height:90vh;
-  color: white;
-  background:url('/img/fondo-shop.jpg');
-  background-position: center;		
-  background-size: cover;
-}
-
-.items-shop{
-  background: rgba(0,0,0,.5); 
-  height:100%;
+.btn-floating{
+  bottom: 30px;
+	right: 20px;
+	z-index:999;
+	position: fixed;
+	padding-top: 10px;
 }

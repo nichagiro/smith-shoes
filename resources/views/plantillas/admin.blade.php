@@ -2,19 +2,20 @@
 <html lang="en">
 
 <head>
-
+  {{-- METAS --}}
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Smith Shoes</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="CISDE">
+  <meta name="copyright" content="© CISDE">
+  <meta name="language" content="es"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+  <title> Smith Shoes </title>
+  {{-- FAVICON --}}
+  <link rel="icon" href="{{asset('img/smith shoes-cisde.png')}}" type="image/png">	
   <!-- Custom fonts for this template-->
   <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="{{asset ('css/sb-admin-2.min.css')}}" rel="stylesheet">
   
@@ -66,7 +67,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="/slider">
           <i class="fas fa-images"></i>
-          <span>los mas vendidos</span>
+          <span>Pasarela</span>
         </a>
       </li>
 
@@ -165,7 +166,6 @@
 
       {{-- CONTENIDO APLICACION --}}
       <div class="container w-100">
-        
         @yield('content')
       </div>
         

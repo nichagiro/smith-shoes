@@ -15,10 +15,11 @@ class shopController extends Controller
      */
     public function index()
     {
-        $zapatillas = zapatilla::inRandomOrder()->paginate(21);
+        $zapatillas = zapatilla::inRandomOrder()->paginate(20);
         $marcas = marca::all();
+        $marcaSelect = 'Zapatillas';
 
-        return view('mart.shop', compact('zapatillas','marcas'));
+        return view('mart.shop', compact('zapatillas','marcas','marcaSelect'));
     }
 
     /**
@@ -45,7 +46,6 @@ class shopController extends Controller
 
     public function store(Request $request)
     {
-        $filtro = false;
 
         // Sin filtro
         if($request->filtro == 0){
@@ -53,7 +53,9 @@ class shopController extends Controller
             $zapatillas = zapatilla::inRandomOrder()->paginate(21);
             $marcas = marca::all();
 
-            return view('mart.shop', compact('zapatillas','marcas'));
+            $marcaSelect = 'Zapatillas';
+
+            return view('mart.shop', compact('zapatillas','marcas','marcaSelect'));
 
         }
 
@@ -63,9 +65,12 @@ class shopController extends Controller
             ->where('id_marca','=',$request->filtro)
             ->paginate(21);
 
+            // Nombre de la marca seleccionada a filtrar
+            $marcaSelect = marca::find($request->filtro)->name_marca;
+
             $marcas = marca::all();
 
-            return view('mart.shop', compact('zapatillas','marcas'));
+            return view('mart.shop', compact('zapatillas','marcas','marcaSelect'));
 
         }
     }

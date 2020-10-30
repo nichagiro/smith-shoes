@@ -14,6 +14,7 @@ class sendForm extends Controller
     public function enviar(Request $request){
 
         $request->validate([
+            'privacidad' => 'required',
             'nombre' => 'required',
             'email' => 'required|email',
             'telefono' => 'required|numeric',
@@ -23,7 +24,7 @@ class sendForm extends Controller
         $datos= $request->all(); 
 
         Mail::to('nicolaschamorro@cisde.co')
-        ->send(new correoElectronico($datos));
+        ->queue(new correoElectronico($datos));
 
         return back()->with('status','Correo enviado, nos comunicaremos con usted lo mas pronto posible');
 

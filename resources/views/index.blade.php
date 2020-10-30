@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        {{-- METAS --}}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Zapatillas de moda</title>
+        <meta name="keywords" content="zapatillas, zapatillas para niñas, zapataillas nike, zapatillas adidas, zapatillas puma">
+        <meta name="description" content="venta de zapatillas para niñas, niños y adultos, zapatillas nike, zapatillas puma, zapatillas adidas, zapatiilas de marca y para toda ocacion, gran variedad de zapatillas en diseño y color.">
+        <meta name="subject" content="tienda de zapatillas">
+        <meta name="author" content="CISDE">
+        <meta name="copyright" content="© CISDE"/>
+        <meta name="language" content="es"/>
+        <meta name="revisit-after" content="1 month"/>
+        <meta name="robots" content="index, follow"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>Zapatillas</title>
+        {{-- FAVICON --}}
+        <link rel="icon" href="{{asset('img/smith shoes-cisde.png')}}" type="image/png">	
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> 
         <!--stylesheet-->
@@ -51,10 +63,10 @@
                 <div class="w-100">
                     <img src="{{asset('img/smith shoes-cisde.png')}}" alt="smith shoes" height="300px;">
                 </div>
-                <h1>Zapatillas de moda</h1>
-                <h2>
+                <h1>Zapatillas</h1>
+                <div>
                     <em>Estilo, Calidad y Comodidad</em>
-                </h2>
+                </div>
                 <a class="btn btn-info btn-xl" href="/shop">Tienda</a>
             </div>
             <div class="overlay"></div>
@@ -69,30 +81,38 @@
         <!-- Acerca de nosotros -->
         <section id="About" class="content-section">
             <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="block-heading">
-                    <h2>Acerca de nosotros</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="block-heading">
+                            <h2>Zapatillas de moda</h2> 
+                        </div>
+                        <div class="">
+                            Somos fabricántes y mayoristas de calzado deportivo. zapatillas de marca, como lo son:
+                            las <strong>zapatillas nike</strong> y <strong>zapatillas puma</strong>; tenemos gran variedad de zapatillas para todo publico:
+                            calzado para dama, calazado para niñas, calzado para niños, etc.
+                        <div>
+                    </div>
                 </div>
-                <p class="lead">Somos fabricantes y mayoristas de calzado deportivo</p>
-                </div>
-            </div>
             </div>
         </section>
         <!-- Acerca de nosotros -->
         <section id="Services" class="content-section text-center">
             <div class="container">
                 <div class="block-heading">
-                    <h2> Nuestras Marcas</h2>
-                    <p>Lo mejor en calzado deportivo</p>
+                    <h3> Calzado deportivo</h3>
+                    <div class="d-flex justify-content-center">
+                        <p class="mr-3">Zapatillas Puma,</p>
+                        <p class="mr-3">Zapatillas Adidas,</p>
+                        <p>Zapatillas Nike.</p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
                         <div class="service-box">
                             <div class="service-icon yellow">
-                            <div class="front-content">
-                            <img src="{{asset('img/icon-puma.png')}}">
-                                <h3 class="mt-4" style="font-size: 2rem;">PUMA</h3>
+                            <div class="front-content text-white">
+                                <img src="{{asset('img/icon-puma.png')}}" alt="smith shoes">
+                                <p class="mt-4" style="font-size: 2rem;">PUMA</p>
                             </div>
                             </div>
                             <div class="service-content">
@@ -104,8 +124,8 @@
                         <div class="service-box">
                             <div class="service-icon orange">
                                 <div class="front-content text-white">
-                                    <img src="{{asset('img/icon-adidas.png')}}">
-                                    <h3 class="mt-4" style="font-size: 2rem;">ADIDAS</h3>
+                                    <img src="{{asset('img/icon-adidas.png')}}" alt="smith shoes">
+                                    <p class="mt-4" style="font-size: 2rem;">ADIDAS</p>
                                 </div>
                             </div>
                             <div class="service-content">
@@ -117,8 +137,8 @@
                         <div class="service-box ">
                             <div class="service-icon red">
                                 <div class="front-content text-white">
-                                    <img src="{{asset('img/icon-nike.png')}}">
-                                    <h3 class="mt-4" style="font-size: 2rem;">NIKE</h3>
+                                    <img src="{{asset('img/icon-nike.png')}}" alt="smith shoes">
+                                    <p class="mt-4" style="font-size: 2rem;">NIKE</p>
                                 </div>
                             </div>
                             <div class="service-content">
@@ -129,19 +149,22 @@
                 </div>
             </div>
         </section>
-        {{-- PRODCUTOS DE CALIDAD --}}
+        {{-- ZAPATILLAS DE MODA --}}
         <section class="content-section text-center" id="Portfolio">
             <div class="container">
                 <div class="block-heading">
-                    <h2>Productos de calidad</h2>
-                    <p>Gran variedad y diseños a la moda</p>
+                    <h2>Zapatillas de moda</h2>
+                    <p>
+                        Gran variedad de zapatillas a la moda, zapatillas deportivas ideales para ir al gimnacio, 
+                        <strong>calzado</strong> fino  y duradero; zapatillas con estilo y buen diseño.
+                    </p>
                 </div>
                 <div class="portfolio-wrapper clearfix">
                     @foreach ($portafolio as $zapatilla)       
                         <a class="each-portfolio" data-fancybox="gallery" href="{{ url ("img/portafolio/{$zapatilla->photo}")}}">
                             <div class="content hover-cont-wrap">   
                                 <div class="content-overlay"></div>
-                                <img class="content-image" src="{{asset('img/portafolio/'.$zapatilla->photo)}}" style="height:300px;">
+                            <img class="content-image" src="{{asset('img/portafolio/'.$zapatilla->photo)}}" style="height:300px;" alt="smith shoes">
                                 <div class="content-details fadeIn-bottom">
                                     <span class="zoom"><i class="fa fa-search-plus"></i></span>
                                 </div>
@@ -157,14 +180,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="block-heading">
-                            <h2>Los mas vendidos</h2>
-                            <p>Por su diseño, estilo y economia la gente los mas prefiere</p>
+                            <h2>Venta de zapatillas</h2>
+                            <p>Por su diseño, estilo y economia la gente los más prefiere.</p>
                         </div>
                         <div id="customers-testimonials" class="owl-carousel sin-link">
                             @foreach ($slider as $sliders)
                                 <div class="item">
                                     <div class="shadow-effect">
-                                        <img class="img-circle" src="{{asset('img/slider/'.$sliders->photo)}}">
+                                        <img class="img-circle" src="{{asset('img/slider/'.$sliders->photo)}}" alt="smith shoes">
                                         {{-- <p>$250.000</p> --}}
                                     </div>
                                     <a target="_blank" href="{{ url ("https://wa.me/+573138117901?text=me%20interesa%20la%20la%20zapatilla%20{$sliders->name_zapatilla}")}}">
@@ -176,15 +199,15 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> 
         <!-- END OF TESTIMONIALS -->
         <section id="Contact" class="content-section">
             <div class="container">
                 <div class="block-heading">
-                    <h2>Contactenos !</h2>
+                    <h2>SMITH SHOES</h2>
                     <p>
-                        Digite los datos del formulario e inmediatamente mande el mensaje; nos estaremos comunicando
-                        lo mas pronto posible
+                        Contáctenos, por medio de nuestro botón de WhatsApp, nuestro formulario por correo,
+                        llamada telefónica y redes sociales.                    
                     </p>
                 </div>
                 <div class="row">
@@ -209,21 +232,31 @@
                         <div class="form-wrap">
                             <form action="/sendForm" method="POST">
                                 @csrf
-                                <div class="fname floating-label">
-                                    <input type="text" class="floating-input" name="nombre" />
-                                    <label for="title">Nombre Completo</label>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12">
+                                        <small>Nombre</small>
+                                        <input type="text" class="form-control" name="nombre" />
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <small>Email</small>
+                                        <input type="email" class="form-control" name="email" />
+                                    </div>
                                 </div>
-                                <div class="email floating-label">
-                                    <input type="email" class="floating-input" name="email" />
-                                    <label for="email">Correo</label>
+                                <div>
+                                    <small>Telefono</small>
+                                    <input type="tel" class="form-control" name="telefono" />
                                 </div>
-                                <div class="contact floating-label">
-                                    <input type="tel" class="floating-input" name="telefono" />
-                                    <label for="email">Telefono</label>
+                                <div>
+                                    <small>Mensaje</small>
+                                    <textarea type="text" class="form-control" name="mensaje"></textarea>
                                 </div>
-                                <div class="company floating-label">
-                                    <textarea type="text" class="floating-input" name="mensaje"></textarea>
-                                    <label for="email">Mensaje</label>
+                                <div class="mt-3 mb-3 d-flex justify-content-center">
+                                    <div>
+                                        <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1" name="privacidad">
+                                    </div>
+                                    <div>
+                                        <a href="/politica-privacidad"> Acepto los terminos de manejo de datos</a>
+                                    </div>
                                 </div>
                                 <div class="submit-btn">
                                     <button type="submit">enviar</button>
@@ -234,6 +267,10 @@
                 </div>
             </div>
         </section>
+        
+        @include('plantillas.components.whatsapp')
+
+
         <footer class="footer text-center">
             <div class="container">
                 <ul class="list-inline">
@@ -252,8 +289,7 @@
             <a href="https://cisde.co/" target="_blank">
                 <p class="text-muted small mb-0">Copyright © CISDE 2020</p>
             </a>
-        </footer>
-
+        </footer> 
         
     <!-- scripts -->
     <script type="text/javascript" src="{{asset('js/jquery-3.2.1.min.js')}}"></script>

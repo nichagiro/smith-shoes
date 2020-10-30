@@ -6,7 +6,15 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CISDE">
+    <meta name="copyright" content="© CISDE">
+    <meta name="language" content="es"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    {{-- FAVICON --}}
+    <link rel="icon" href="{{asset('img/smith shoes-cisde.png')}}" type="image/png">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
