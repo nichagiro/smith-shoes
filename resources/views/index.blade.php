@@ -116,7 +116,7 @@
                             </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/puma.jpg')}}" alt="smith shoes">
+                                <img class="content-image img-fluid" src="{{asset('img/puma.jpeg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/adidas.jpg')}}" alt="smith shoes">
+                                <img class="content-image img-fluid" src="{{asset('img/adidas.jpeg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="service-content">
-                                <img class="content-image img-fluid" src="{{asset('img/nike.jpg')}}" alt="smith shoes">
+                                <img class="content-image img-fluid" src="{{asset('img/nike.jpeg')}}" alt="smith shoes">
                             </div>
                         </div>
                     </div>
