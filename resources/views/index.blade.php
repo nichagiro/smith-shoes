@@ -13,6 +13,7 @@
         <meta name="revisit-after" content="1 month"/>
         <meta name="robots" content="index, follow"/>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <link rel="canonical" href="https://smith-shoes.com/">
         <title>Zapatillas</title>
         {{-- FAVICON --}}
         <link rel="icon" href="{{asset('img/smith shoes-cisde.png')}}" type="image/png">	
