@@ -220,9 +220,9 @@
                                         <span class="c-icon"><i class="fa fa-phone" aria-hidden="true"></i></span><span class="c-info">+57 313 811 7901</span>
                                     </div>
                                 </a>
-                                <a href="mailto:calzado@smithshoes.com">
+                                <a href="mailto:calzado@smith-shoes.com">
                                     <div class="c-detail">
-                                        <span class="c-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="c-info">calzado@smithshoes.com</span>
+                                        <span class="c-icon"><i class="fa fa-envelope" aria-hidden="true"></i></span><span class="c-info">calzado@smith-shoes.com</span>
                                     </div>
                                 </a>
                             </div>
