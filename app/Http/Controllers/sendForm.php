@@ -23,7 +23,7 @@ class sendForm extends Controller
 
         $datos= $request->all(); 
 
-        Mail::to('nicolaschamorro@cisde.co')
+        Mail::to('calzado@smith-shoes.com')
         ->queue(new correoElectronico($datos));
 
         return back()->with('status','Correo enviado, nos comunicaremos con usted lo mas pronto posible');
