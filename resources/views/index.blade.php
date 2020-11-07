@@ -45,13 +45,13 @@
                 <a class="smooth-scroll" href="#Services">Nuestras Marcas</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Portfolio">Portfolio</a>
+                <a class="smooth-scroll" href="#Portfolio">Portafolio</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="smooth-scroll" href="#Testimonials">Los mas vendidos</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="smooth-scroll" href="#Contact">Contactenos</a>
+                <a class="smooth-scroll" href="#Contact">Contáctenos</a>
             </li>
             <li class="sidebar-nav-item">
                 <a class="" href="/shop">Tienda</a>
