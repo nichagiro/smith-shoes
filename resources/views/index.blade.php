@@ -154,7 +154,7 @@
         <section class="content-section text-center" id="Portfolio">
             <div class="container">
                 <div class="block-heading">
-                    <h2>Zapatillas de moda</h2>
+                    <h2>Zapatillas de calidad</h2>
                     <p>
                         Gran variedad de zapatillas a la moda, zapatillas deportivas ideales para ir al gimnacio, 
                         <strong>calzado</strong> fino  y duradero; zapatillas con estilo y buen diseño.
