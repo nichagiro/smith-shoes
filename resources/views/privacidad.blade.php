@@ -63,7 +63,7 @@
 
                     <b>COMUNICACIÓN DE DATOS PERSONALES</b><br><br>
 
-                    Los datos pueden ser comunicados a empresas relacionadas con DON POLLO para la prestación de los diversos servicios en calidad de Encargados del Tratamiento. La empresa no realizará ninguna cesión, salvo por obligación legal.<br><br>
+                    Los datos pueden ser comunicados a empresas relacionadas con SMITH SHOES para la prestación de los diversos servicios en calidad de Encargados del Tratamiento. La empresa no realizará ninguna cesión, salvo por obligación legal.<br><br>
 
                     <b>SUS DERECHOS</b><br><br>
 
