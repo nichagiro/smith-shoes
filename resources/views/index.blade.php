@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="zapatillas, zapatillas para niñas, zapataillas nike, zapatillas adidas, zapatillas puma">
-        <meta name="description" content="venta de zapatillas para niñas, niños y adultos, zapatillas nike, zapatillas puma, zapatillas adidas, zapatiilas de marca y para toda ocacion, gran variedad de zapatillas en diseño y color.">
+        <meta name="description" content="venta de zapatillas, zapatillas nike, zapatillas puma, zapatillas adidas, zapatiilas de marca y deportiva para toda ocacion.">
         <meta name="subject" content="tienda de zapatillas">
         <meta name="author" content="CISDE">
         <meta name="copyright" content="© CISDE"/>
@@ -14,8 +14,23 @@
         <meta name="robots" content="index, follow"/>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
         <link rel="canonical" href="https://smith-shoes.com/">
-        <title>Zapatillas</title>
-        {{-- FAVICON --}}
+        <title>Zapatillas Smith shoes | zapatillas nike | zapatillas puma</title>
+   
+        {{-- METAS FACEBOOK --}}
+        <meta property="og:title" content="Zapatillas Smith shoes | zapatillas nike | zapatillas puma" />
+        <meta property="og:type" content="video.movie" />
+        <meta property="og:url" content="https://smith-shoes.com" />
+        <meta property="og:image" content="https://smith-shoes.com/img/fondo%20zapato.jpg" />
+        <meta property="og:description" content="venta de zapatillas, zapatillas nike, zapatillas puma, zapatillas adidas, zapatiilas de marca y deportiva para toda ocacion." />
+
+        {{-- METAS TWITTER --}}
+        <meta name="twitter:card" content="summary" />
+        <meta property="og:url" content="https://smith-shoes.com" />
+        <meta property="og:title" content="Zapatillas Smith shoes | zapatillas nike | zapatillas puma" />
+        <meta property="og:description" content="venta de zapatillas, zapatillas nike, zapatillas puma, zapatillas adidas, zapatiilas de marca y deportiva para toda ocacion." />
+        <meta property="og:image" content="https://smith-shoes.com/img/fondo%20zapato.jpg" />
+
+        {{-- FAVICON AND STYLES --}}
         <link rel="icon" href="{{asset('img/smith shoes-cisde.png')}}" type="image/png">	
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> 
@@ -24,6 +39,48 @@
         <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
         <link href="{{asset('css/styles.css')}}" rel="stylesheet" type="text/css">
         <link href="{{asset('css/custom-responsive-styles.css')}}" rel="stylesheet" type="text/css">
+        
+        {{-- SCHEMA STRUCTURE --}}
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": "zapatillas deportivas",
+                "image": [
+                "https://smith-shoes.com/#gallery-3",
+                "https://smith-shoes.com/#gallery-5",
+                "https://smith-shoes.com/#gallery-6"
+                ],
+                "brand": {
+                "@type": "Brand",
+                "name": "Nike, Adidas, Puma"
+                },
+                "description": "Venta de zapatillas deportivas",
+                "sku": "44687909245",
+                "review": {
+                    "@type": "Review",
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5"
+                    },
+                    "author": {
+                        "@type": "organization",
+                        "name": "CISDE"
+                    }    
+                },
+                "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "ratingCount": "7549"
+                },
+                "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": "70000",
+                "highPrice": "160000",
+                "priceCurrency": "COP"
+                }
+            }
+        </script>
     </head>
     <body>
         <!-- Navigation -->
